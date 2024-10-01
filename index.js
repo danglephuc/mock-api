@@ -4,9 +4,11 @@ const jwt = require('jsonwebtoken');
 const jsonfile = require('jsonfile');
 const path = require('path');
 const fs = require('fs');
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 const SECRET_KEY = process.env.SECRET || 'secret';
